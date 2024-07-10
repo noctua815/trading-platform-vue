@@ -4,7 +4,7 @@ The concept is a trading platform built on Vue 3 + Vite + Typescript. It include
 
 ## Demo
 
-A live demo is available at [github.pages]().
+A live demo is available at [website](https://noctua815.github.io/trading-platform-vue/).
 ![platform-preview](./public/preview.gif)
 
 ## Used technologies
@@ -13,7 +13,7 @@ A live demo is available at [github.pages]().
 - 🛠️ **Tools:** npm, eslint, scss, pug, prettier, conventional commits
 
 ## How to run the app
-1. Install Node.js.
+1. Install Node.js (the project uses Node.js version 18.12.0.). 
 2. Install npm.
 3. Clone the repository.
 4. Type and run: `npm i` in the root directory.

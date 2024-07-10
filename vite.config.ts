@@ -6,6 +6,7 @@ import svgLoader from 'vite-svg-loader'
 // https://vitejs.dev/config/
 // @ts-ignore
 export default defineConfig({
+  base: '/trading-platform-vue/',
   plugins: [
     vue(),
     svgLoader({
