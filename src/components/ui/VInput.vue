@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -12,8 +12,10 @@ const styles = computed(() => {
   return `max-width: ${props.maxWidth};`
 })
 
-const inputEvent = (event) => {
-  emit('update:modelValue', event.target.value)
+const inputEvent = (event: Event) => {
+  if (!event.target) return
+  const target = event.target as HTMLTextAreaElement
+  emit('update:modelValue', target.value)
 }
 </script>
 

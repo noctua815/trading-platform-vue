@@ -42,7 +42,6 @@ const layoutClass = computed(() => {
     position: relative;
     height: 100%;
     max-height: 280px;
-    //@include default-scroll;
 
     &-scroll {
     }

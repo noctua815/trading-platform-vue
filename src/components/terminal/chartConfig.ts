@@ -1,9 +1,22 @@
 import { DateTime } from 'luxon'
 
+export interface DatasetConfig {
+  label: string
+  borderColor: string
+  borderWidth: number
+  tension: number
+  data?: DataPoint[]
+}
+
+export interface DataPoint {
+  x: string
+  y: number
+}
+
 const RED = '#df4949'
 const GREEN = '#27ae60'
 
-export const datasetConfig = {
+export const datasetConfig: DatasetConfig = {
   label: 'Value',
   borderColor: RED,
   borderWidth: 1.5,
@@ -56,7 +69,7 @@ export const chartOptions = {
       },
       ticks: {
         padding: 0,
-        callback: (value, index) => {
+        callback: (value: number, index: number) => {
           if ([3, 10, 16].includes(index)) {
             return DateTime.fromMillis(value).toFormat('dd MMMM')
           }
@@ -82,15 +95,15 @@ export const chartOptions = {
       border: {
         display: false,
       },
-      // beginAtZero: true,
       min: -10,
       max: 70,
     },
   },
 }
 
-export const getDate = (day, offset) => {
+export const getDate = (day: Date, offset: number) => {
   try {
+    // @ts-ignore
     let dt = new DateTime(day)
     let res = dt.minus({ days: offset })
     return res

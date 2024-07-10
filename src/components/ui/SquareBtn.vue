@@ -1,11 +1,11 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
   value: Number,
   counter: Number,
   color: {
     type: String,
     default: 'green',
-    validator: (value) =>
+    validator: (value: string) =>
       ['green', 'blue', 'cerulean', 'violet'].includes(value),
   },
 })

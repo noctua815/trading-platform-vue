@@ -1,10 +1,21 @@
-<script setup>
+<script setup lang="ts">
 import { reactive } from 'vue'
 import DragItem from '@ui/DragItem.vue'
 import PlusBtn from '@ui/PlusBtn.vue'
 import SquareBtn from '@ui/SquareBtn.vue'
 
-const operations = reactive([
+interface ListItem {
+  value: number
+  counter?: number
+}
+
+interface Operation {
+  id: number
+  color: string
+  list: ListItem[]
+}
+
+const operation = reactive<Operation[]>([
   {
     id: 1,
     color: 'green',
@@ -37,7 +48,7 @@ const operations = reactive([
   },
 ])
 
-const select = (operation) => {
+const select = (operation: Operation) => {
   console.log('select', operation)
 }
 </script>
@@ -60,14 +71,12 @@ DragItem(title="Trade Operations" expansion)
 <style lang="scss" scoped>
 .grid {
   display: grid;
-  //grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   grid-template-columns: repeat(4, minmax(10px, max-content));
   justify-content: space-between;
   gap: 20px;
 
   @include small-desktop {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    //grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   }
 
   &__group {
@@ -75,7 +84,6 @@ DragItem(title="Trade Operations" expansion)
     grid-template-columns: repeat(2, max-content);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px 6px;
-    //border: 1px solid red;
   }
 }
 </style>

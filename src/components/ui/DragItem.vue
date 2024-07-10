@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import RectIcon from '@/assets/icons/rect.svg'
 import DragIcon from '@/assets/icons/drag.svg'
@@ -138,6 +138,7 @@ function toggleBody() {
         height: 24px;
         cursor: grab;
         opacity: 0.4;
+        color: var(--c-drag-handle);
         transition: opacity 0.3s ease;
 
         &:hover {

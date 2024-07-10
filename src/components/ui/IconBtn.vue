@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 import SettingsIcon from '@/assets/icons/settings.svg'
 import UserIcon from '@/assets/icons/user.svg'
@@ -7,7 +7,7 @@ const props = defineProps({
   text: String,
   icon: {
     type: String,
-    validator: (value) => ['settings', 'user'].includes(value),
+    validator: (value: string) => ['settings', 'user'].includes(value),
   },
 })
 const iconComponent = computed(() => {

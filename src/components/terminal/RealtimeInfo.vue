@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import RealtimeItem from '@/components/terminal/RealtimeItem.vue'
 import DragItem from '@ui/DragItem.vue'
 import VTable from '@ui/table/VTable.vue'
@@ -58,7 +58,7 @@ const list = reactive([
   },
 ])
 
-const killItem = (index) => {
+const killItem = (index: number) => {
   const idx = list.findIndex((item) => item.index === index)
   list.splice(idx, 1)
 }

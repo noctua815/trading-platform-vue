@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import DragItem from '@ui/DragItem.vue'
 import VBtn from '@ui/VButton.vue'

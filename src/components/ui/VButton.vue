@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const emit = defineEmits(['click'])
 const props = defineProps({
   text: {
@@ -12,7 +12,7 @@ const props = defineProps({
   color: {
     type: String,
     default: 'gray',
-    validator: (value) => ['gray', 'red', 'green'].includes(value),
+    validator: (value: string) => ['gray', 'red', 'green'].includes(value),
   },
 })
 

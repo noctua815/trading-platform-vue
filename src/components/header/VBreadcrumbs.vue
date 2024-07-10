@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { reactive, ref, computed } from 'vue'
 import RectIcon from '@/assets/icons/right-rect.svg'
 

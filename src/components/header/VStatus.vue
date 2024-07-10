@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 import OnlineIcon from '@/assets/icons/online.svg'
 import OfflineIcon from '@/assets/icons/offline.svg'

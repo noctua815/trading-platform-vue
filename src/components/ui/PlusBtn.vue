@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import PlusIcon from '@/assets/icons/plus.svg'
 </script>
 

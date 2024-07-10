@@ -54,6 +54,7 @@
   --c-field-border: var(--black-20);
   --c-gray-btn: var(--black-10);
   --c-selector-bg: var(--white);
+  --c-drag-handle: var(--black);
 
   &.dark {
     --black-white: var(--white);
@@ -68,5 +69,6 @@
     --c-field-border: var(--white-20);
     --c-gray-btn: var(--white-10);
     --c-selector-bg: var(--gray-darken-1);
+    --c-drag-handle: var(--white);
   }
 }

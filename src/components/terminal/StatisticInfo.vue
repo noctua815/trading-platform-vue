@@ -1,25 +1,25 @@
-<script setup>
-import { reactive, ref, nextTick } from 'vue'
+<script setup lang="ts">
+import { nextTick, reactive, ref } from 'vue'
 import DragItem from '@ui/DragItem.vue'
 import { Line } from 'vue-chartjs'
 import 'chartjs-adapter-luxon'
-import { datasetConfig, chartOptions, getDate } from './chartConfig.js'
-
+import {
+  chartOptions,
+  datasetConfig,
+  getDate,
+  DatasetConfig,
+  DataPoint,
+} from '@/components/terminal/chartConfig'
 import {
   Chart as ChartJS,
-  TimeScale,
+  Legend,
   LinearScale,
-  PointElement,
   LineElement,
+  PointElement,
+  TimeScale,
   Title,
   Tooltip,
-  Legend,
 } from 'chart.js'
-
-import { DateTime } from 'luxon'
-
-const MIN = 20
-const MAX = 60
 
 ChartJS.register(
   TimeScale,
@@ -32,17 +32,16 @@ ChartJS.register(
 )
 
 const loaded = ref(false)
-const chartData = reactive({})
+const chartData = reactive({
+  datasets: [] as DatasetConfig[],
+})
 
 const loadData = () => {
   const data = getRawArray()
-  // const data = getArray(21, MIN, MAX)
-
   chartData.datasets = [{ ...datasetConfig, data }]
   loaded.value = true
 }
-
-const getRawArray = () => {
+const getRawArray = (): DataPoint[] => {
   return [
     {
       x: '2023-04-03T13:25:07.837+03:00',
@@ -169,6 +168,7 @@ DragItem(title="Statistic" expansion full-width no-padding class="statistic")
 .statistic {
   margin-bottom: 20px;
 }
+
 .chart {
   width: 100%;
 

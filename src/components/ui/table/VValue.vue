@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -6,12 +6,14 @@ const props = defineProps({
   color: {
     type: String,
     default: 'black',
-    validator: (value) => ['black', 'gray', 'green', 'red'].includes(value),
+    validator: (value: string) =>
+      ['black', 'gray', 'green', 'red'].includes(value),
   },
   styles: {
     type: String,
     default: 'normal',
-    validator: (value) => ['normal', 'bold', 'semibold'].includes(value),
+    validator: (value: string) =>
+      ['normal', 'bold', 'semibold'].includes(value),
   },
 })
 const classes = computed(() => {

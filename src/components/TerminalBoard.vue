@@ -1,8 +1,12 @@
-<script setup>
-import { reactive, ref, markRaw, defineAsyncComponent } from 'vue'
+<script setup lang="ts">
+import { reactive, markRaw, defineAsyncComponent } from 'vue'
 import draggable from 'vuedraggable'
-
 import StatisticInfo from '@/components/terminal/StatisticInfo.vue'
+
+type LoadedComponents = {
+  [key: string]: ReturnType<typeof defineAsyncComponent>
+}
+const loadedComps: LoadedComponents = markRaw({})
 
 let list = reactive([
   // { comp: 'StatisticInfo', id: 0, order: 1, props: {}, fullWidth: true},
@@ -13,12 +17,11 @@ let list = reactive([
   { comp: 'RealtimeFrameInfo', id: 22, order: 6 },
   { comp: 'PnlInfo', id: 0, order: 7, props: {} },
 ])
-const loadedComps = markRaw({})
 
 const sortList = () => {
   list = list.sort((a, b) => a.order - b.order)
 }
-const loadComponent = (name) =>
+const loadComponent = (name: string) =>
   defineAsyncComponent(() => import(`./terminal/${name}.vue`))
 
 function loadComponents() {
@@ -50,16 +53,9 @@ loadComponents()
 </template>
 
 <style lang="scss" scoped>
-.board {
-  //padding: 0 40px 34px;
-}
-
 .board-items {
   columns: 2;
   column-gap: 20px;
-  //display: grid;
-  //grid-template-columns: 1fr 1fr;
-  //gap: 20px;
 
   @include small-desktop {
     columns: 1;
@@ -96,7 +92,6 @@ loadComponents()
 }
 .ghost {
   opacity: 1 !important;
-  //cursor: grabbing;
   border-radius: 12px;
 }
 

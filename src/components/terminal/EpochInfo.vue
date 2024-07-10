@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { reactive } from 'vue'
 import DragItem from '@ui/DragItem.vue'
 import EpochItem from '@/components/terminal/EpochItem.vue'
