@@ -1,0 +1,59 @@
+@mixin normal-text {
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height-normal);
+  color: var(--black);
+}
+
+//@mixin normal-link {
+//  @include normal-text;
+//  color: var(--color-text-button);
+//  cursor: pointer;
+//  transition: opacity 0.3s ease;
+//
+//  &:hover {
+//    opacity: 0.7;
+//  }
+//}
+
+@mixin table-item {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin abs {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@mixin text-overflow-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin default-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin after-indent($size) {
+  &:after {
+    content: '';
+    display: block;
+    height: $size;
+  }
+}
+
+@mixin small-desktop {
+  @media (max-width: 1048px) {
+    @content;
+  }
+}

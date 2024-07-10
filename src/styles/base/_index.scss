@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Poppins&display=swap');
+
+*, *:after, *:before {
+  box-sizing:border-box;
+}
+
+html, body {
+  text-rendering: auto;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--c-bg);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 100%;
+  //padding: 0 40px;
+  max-width: var(--max-layout-width);
+  margin: 0 auto;
+
+  @include small-desktop {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+}
+
+// Tables
+.table-layout {
+  display: grid;
+  grid-template-columns: 0.5fr repeat(7, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+.table-layout-frame {
+  display: grid;
+  grid-template-columns: 2fr repeat(7, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+.divider {
+  &:after {
+    content: '/';
+    color: var(--black-white);
+    opacity: 0.2;
+    padding: 0 5px;
+  }
+}
+
+.divider-light {
+  &:after {
+    content: '/';
+    color: var(--black-20);
+    padding: 0 5px;
+  }
+}
