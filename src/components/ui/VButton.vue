@@ -3,17 +3,17 @@ const emit = defineEmits(['click'])
 const props = defineProps({
   text: {
     type: String,
-    default: 'Add'
+    default: 'Add',
   },
   disabled: {
     type: Boolean,
-    default: false
+    default: false,
   },
   color: {
     type: String,
     default: 'gray',
-    validator: (value) => ['gray', 'red', 'green'].includes(value)
-  }
+    validator: (value) => ['gray', 'red', 'green'].includes(value),
+  },
 })
 
 const click = () => {

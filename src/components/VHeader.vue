@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IconBtn from '@ui/IconBtn.vue'
 import ThemeBtn from '@ui/ThemeBtn.vue'
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 const version = ref('v.0231')
 </script>

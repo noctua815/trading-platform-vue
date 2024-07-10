@@ -1,6 +1,6 @@
 <script setup>
-import {reactive} from 'vue'
-import DragItem   from '@ui/DragItem.vue'
+import { reactive } from 'vue'
+import DragItem from '@ui/DragItem.vue'
 import EpochItem from '@/components/terminal/EpochItem.vue'
 </script>
 
@@ -30,7 +30,8 @@ DragItem(title="Epoch Info" expansion)
 
 <style lang="scss" scoped>
 .grid {
-  &__head, &__body {
+  &__head,
+  &__body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -43,7 +44,6 @@ DragItem(title="Epoch Info" expansion)
   }
 
   &__body {
-
   }
 }
 
@@ -59,7 +59,7 @@ DragItem(title="Epoch Info" expansion)
   }
 
   span:nth-child(2) {
-    color: var(--red)
+    color: var(--red);
   }
 }
 </style>

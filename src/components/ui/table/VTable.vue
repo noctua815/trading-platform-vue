@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {reactive, ref, computed} from 'vue'
+import { reactive, ref, computed } from 'vue'
 
 interface Column {
-  name: string,
+  name: string
 }
 
 const props = defineProps<{
@@ -44,7 +44,8 @@ const layoutClass = computed(() => {
     max-height: 280px;
     //@include default-scroll;
 
-    &-scroll {}
+    &-scroll {
+    }
   }
 }
 </style>

@@ -1,22 +1,23 @@
 <script setup>
-import {computed}   from 'vue'
+import { computed } from 'vue'
 import SettingsIcon from '@/assets/icons/settings.svg'
-import UserIcon     from '@/assets/icons/user.svg'
+import UserIcon from '@/assets/icons/user.svg'
 
 const props = defineProps({
   text: String,
   icon: {
     type: String,
-    validator: (value) => ['settings', 'user'].includes(value)
-  }
+    validator: (value) => ['settings', 'user'].includes(value),
+  },
 })
 const iconComponent = computed(() => {
   switch (props.icon) {
-    case 'settings': return SettingsIcon
-    case 'user': return UserIcon
+    case 'settings':
+      return SettingsIcon
+    case 'user':
+      return UserIcon
   }
 })
-
 </script>
 
 <template lang="pug">

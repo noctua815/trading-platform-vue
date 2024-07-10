@@ -1,9 +1,9 @@
 <script setup>
-import {ref}    from 'vue'
+import { ref } from 'vue'
 import DragItem from '@ui/DragItem.vue'
-import VBtn     from '@ui/VButton.vue'
-import VValue   from '@ui/table/VValue.vue'
-import VInput   from '@ui/VInput.vue'
+import VBtn from '@ui/VButton.vue'
+import VValue from '@ui/table/VValue.vue'
+import VInput from '@ui/VInput.vue'
 
 const bidAmount = ref(0.2)
 

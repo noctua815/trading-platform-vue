@@ -1,15 +1,15 @@
 <script setup>
-import {computed} from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   modelValue: [String, Number],
-  maxWidth: String
+  maxWidth: String,
 })
 
 const emit = defineEmits(['update:modelValue'])
 const styles = computed(() => {
   if (!props.maxWidth) return ''
-  return `max-width: ${ props.maxWidth };`
+  return `max-width: ${props.maxWidth};`
 })
 
 const inputEvent = (event) => {

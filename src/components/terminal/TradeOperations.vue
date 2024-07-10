@@ -1,54 +1,44 @@
 <script setup>
-import {reactive} from 'vue'
-import DragItem   from '@ui/DragItem.vue'
-import PlusBtn    from '@ui/PlusBtn.vue'
-import SquareBtn  from '@ui/SquareBtn.vue'
+import { reactive } from 'vue'
+import DragItem from '@ui/DragItem.vue'
+import PlusBtn from '@ui/PlusBtn.vue'
+import SquareBtn from '@ui/SquareBtn.vue'
 
 const operations = reactive([
   {
     id: 1,
     color: 'green',
     list: [
-      {value: 0.1, counter: 14},
-      {value: 0.26},
-      {value: 0.5},
-      {value: 0.76}
-    ]
+      { value: 0.1, counter: 14 },
+      { value: 0.26 },
+      { value: 0.5 },
+      { value: 0.76 },
+    ],
   },
   {
     id: 2,
     color: 'blue',
     list: [
-      {value: 1},
-      {value: 2, counter: 2},
-      {value: 1.5},
-      {value: 2.5, counter: 4}
-    ]
+      { value: 1 },
+      { value: 2, counter: 2 },
+      { value: 1.5 },
+      { value: 2.5, counter: 4 },
+    ],
   },
   {
     id: 3,
     color: 'cerulean',
-    list: [
-      {value: 3},
-      {value: 4},
-      {value: 5},
-      {value: 6}
-    ]
+    list: [{ value: 3 }, { value: 4 }, { value: 5 }, { value: 6 }],
   },
   {
     id: 4,
     color: 'violet',
-    list: [
-      {value: 7},
-      {value: 8},
-      {value: 9},
-      {value: 10}
-    ]
-  }
+    list: [{ value: 7 }, { value: 8 }, { value: 9 }, { value: 10 }],
+  },
 ])
 
 const select = (operation) => {
-  console.log('select =', operation)
+  console.log('select', operation)
 }
 </script>
 

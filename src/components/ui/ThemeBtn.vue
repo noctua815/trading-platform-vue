@@ -1,14 +1,14 @@
 <script setup>
-import {reactive, ref} from 'vue'
-import ThemeIcon       from '@/assets/icons/theme.svg'
+import { reactive, ref } from 'vue'
+import ThemeIcon from '@/assets/icons/theme.svg'
 
 const theme = ref('light')
 const themes = reactive(['light', 'dark'])
-function switchTheme () {
-  theme.value = themes.find(item => item !== theme.value)
+function switchTheme() {
+  theme.value = themes.find((item) => item !== theme.value)
   setDefaultTheme(theme.value)
 }
-function setDefaultTheme (value) {
+function setDefaultTheme(value) {
   document.documentElement.className = value
 }
 setDefaultTheme(theme.value)

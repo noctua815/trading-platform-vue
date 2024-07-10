@@ -1,7 +1,7 @@
 <script setup>
-import {reactive, ref, computed} from 'vue'
+import { reactive, ref, computed } from 'vue'
 const props = defineProps({
-  value: Number
+  value: Number,
 })
 
 const numberType = computed(() => {

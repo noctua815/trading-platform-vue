@@ -1,4 +1,4 @@
-import {DateTime} from 'luxon'
+import { DateTime } from 'luxon'
 
 const RED = '#df4949'
 const GREEN = '#27ae60'
@@ -7,28 +7,28 @@ export const datasetConfig = {
   label: 'Value',
   borderColor: RED,
   borderWidth: 1.5,
-  tension: 0.15
+  tension: 0.15,
 }
 
 export const chartOptions = {
   responsive: true,
   maintainAspectRatio: false,
   interaction: {
-    mode: 'point'
+    mode: 'point',
   },
   plugins: {
     legend: {
-      display: false
+      display: false,
     },
     tooltip: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
   layout: {
     padding: {
       autoPadding: false,
-      bottom: 20
-    }
+      bottom: 20,
+    },
   },
   elements: {
     point: {
@@ -36,8 +36,8 @@ export const chartOptions = {
       backgroundColor: RED,
       pointHoverRadius: 5,
       pointHoverBackgroundColor: RED,
-      pointHoverBorderColor: RED
-    }
+      pointHoverBorderColor: RED,
+    },
   },
   scales: {
     x: {
@@ -47,12 +47,12 @@ export const chartOptions = {
         unit: 'day',
         displayFormats: {
           week: 'dd MMMM',
-          day: 'dd MMMM'
-        }
+          day: 'dd MMMM',
+        },
       },
       scaleLabel: {
         display: true,
-        labelString: 'Date'
+        labelString: 'Date',
       },
       ticks: {
         padding: 0,
@@ -60,42 +60,41 @@ export const chartOptions = {
           if ([3, 10, 16].includes(index)) {
             return DateTime.fromMillis(value).toFormat('dd MMMM')
           }
-        }
+        },
       },
       grid: {
         display: false,
-        tickLength: 30
+        tickLength: 30,
       },
       border: {
-        display: false
-      }
+        display: false,
+      },
     },
     y: {
       display: true,
       ticks: {
-        display: false
+        display: false,
       },
       grid: {
         display: false,
-        tickLength: 0
+        tickLength: 0,
       },
       border: {
-        display: false
+        display: false,
       },
       // beginAtZero: true,
       min: -10,
-      max: 70
-    }
-  }
+      max: 70,
+    },
+  },
 }
 
 export const getDate = (day, offset) => {
   try {
     let dt = new DateTime(day)
-    let res = dt.minus({days: offset})
+    let res = dt.minus({ days: offset })
     return res
-  }
-  catch (e) {
+  } catch (e) {
     console.log(e)
   }
 }

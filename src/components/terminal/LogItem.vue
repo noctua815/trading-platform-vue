@@ -1,7 +1,7 @@
 <script setup="">
 const props = defineProps({
   time: String,
-  info: Array
+  info: Array,
 })
 </script>
 

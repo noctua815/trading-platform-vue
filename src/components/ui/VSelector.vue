@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {reactive, ref} from 'vue'
+import { reactive, ref } from 'vue'
 import RectIcon from '@/assets/icons/small-rect.svg'
 
 interface SelectorItem {
@@ -17,7 +17,7 @@ const opened = ref(false)
 
 function getActive() {
   if (!props.modelValue) return
-  const find = props.list.find(item => item.value === props.modelValue)
+  const find = props.list.find((item) => item.value === props.modelValue)
   if (find) active = find
 }
 
@@ -31,7 +31,6 @@ const select = (item: SelectorItem) => {
   opened.value = false
   active = item
 }
-
 </script>
 
 <template lang="pug">

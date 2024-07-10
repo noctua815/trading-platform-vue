@@ -5,8 +5,9 @@ defineProps({
   color: {
     type: String,
     default: 'green',
-    validator: (value) => ['green', 'blue', 'cerulean', 'violet'].includes(value)
-  }
+    validator: (value) =>
+      ['green', 'blue', 'cerulean', 'violet'].includes(value),
+  },
 })
 </script>
 
@@ -51,7 +52,6 @@ defineProps({
 
   &--blue {
     background-color: var(--light-blue);
-
   }
 
   &--cerulean {

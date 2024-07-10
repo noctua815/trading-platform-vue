@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VStatus from '@/components/header/VStatus.vue'
 import VBreadcrumbs from '@/components/header/VBreadcrumbs.vue'
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 // import { ref } from 'vue'
 //

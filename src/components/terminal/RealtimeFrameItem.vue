@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {reactive, ref, computed} from 'vue'
+import { reactive, ref, computed } from 'vue'
 import VPercent from '@ui/table/VPercent.vue'
 import VSelector from '@ui/VSelector.vue'
 import VInput from '@ui/VInput.vue'
@@ -14,7 +14,7 @@ interface RealtimeItem {
   paramY: string
   paramZ: string
   frame?: {
-    input: string|number
+    input: string | number
     selector: string
   }
 }
@@ -26,16 +26,16 @@ const props = defineProps<{
 const selectorList = reactive([
   {
     id: 0,
-    value: 'sec'
+    value: 'sec',
   },
   {
     id: 1,
-    value: 'msec'
+    value: 'msec',
   },
   {
     id: 2,
-    value: 'tick'
-  }
+    value: 'tick',
+  },
 ])
 
 const value = ref(60)

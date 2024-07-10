@@ -1,5 +1,5 @@
 <script setup>
-import {ref}    from 'vue'
+import { ref } from 'vue'
 import RectIcon from '@/assets/icons/rect.svg'
 import DragIcon from '@/assets/icons/drag.svg'
 
@@ -7,24 +7,24 @@ const props = defineProps({
   title: String,
   fullWidth: {
     type: Boolean,
-    default: false
+    default: false,
   },
   expansion: {
     type: Boolean,
-    default: false
+    default: false,
   },
   opened: {
     type: Boolean,
-    default: true
+    default: true,
   },
   smallPadding: {
     type: Boolean,
-    default: false
+    default: false,
   },
   noPadding: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 })
 
 const showBody = ref(!props.expansion || props.opened)

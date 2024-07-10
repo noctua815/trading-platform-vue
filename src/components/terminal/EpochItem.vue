@@ -1,19 +1,19 @@
 <script setup>
-import {reactive, ref, computed} from 'vue'
+import { reactive, ref, computed } from 'vue'
 
 const props = defineProps({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   value: {
     type: [String, Number],
-    required: true
+    required: true,
   },
   black: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 })
 </script>
 

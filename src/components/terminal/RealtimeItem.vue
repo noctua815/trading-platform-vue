@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import {defineEmits} from 'vue'
 import VPercent from '@ui/table/VPercent.vue'
 import VBtn from '@ui/VButton.vue'
 
-const emit = defineEmits(['onKillItem'])
+const emit = defineEmits(['killItem'])
 
 interface RealtimeItem {
   index: number
@@ -18,8 +17,8 @@ const props = defineProps<{
   item: RealtimeItem
 }>()
 
-const onKillItem = () => {
-  emit('onKillItem', props.item.index)
+const killItem = () => {
+  emit('killItem', props.item.index)
 }
 
 const closeItem = () => {

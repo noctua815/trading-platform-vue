@@ -21,7 +21,8 @@ main
   min-width: 100vw;
   min-height: 100vh;
 
-  &__head, &__breadcrumbs {
+  &__head,
+  &__breadcrumbs {
     margin-bottom: 20px;
   }
 

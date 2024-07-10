@@ -1,18 +1,18 @@
 <script setup>
-import {reactive} from 'vue'
+import { reactive } from 'vue'
 import DragItem from '@ui/DragItem.vue'
 import VTable from '@ui/table/VTable.vue'
 import RealtimeFrameItem from '@/components/terminal/RealtimeFrameItem.vue'
 
 const columns = reactive([
-  {name: 'Frame', type: ''},
-  {name: 'Range', type: ''},
-  {name: 'STD', type: ''},
-  {name: 'DELTA', type: ''},
-  {name: 'MIDPRICE %', type: ''},
-  {name: 'PARAM X', type: ''},
-  {name: 'PARAM Y', type: ''},
-  {name: 'PARAM Z', type: ''}
+  { name: 'Frame', type: '' },
+  { name: 'Range', type: '' },
+  { name: 'STD', type: '' },
+  { name: 'DELTA', type: '' },
+  { name: 'MIDPRICE %', type: '' },
+  { name: 'PARAM X', type: '' },
+  { name: 'PARAM Y', type: '' },
+  { name: 'PARAM Z', type: '' },
 ])
 
 const list = reactive([
@@ -26,8 +26,9 @@ const list = reactive([
     paramY: 'value',
     paramZ: 'value',
     frame: {
-      input: 3, selector: 'sec'
-    }
+      input: 3,
+      selector: 'sec',
+    },
   },
   {
     index: 1,
@@ -39,8 +40,9 @@ const list = reactive([
     paramY: 'value',
     paramZ: 'value',
     frame: {
-      input: 60, selector: 'msec'
-    }
+      input: 60,
+      selector: 'msec',
+    },
   },
   {
     index: 1,
@@ -52,9 +54,10 @@ const list = reactive([
     paramY: 'value',
     paramZ: 'value',
     frame: {
-      input: 1000, selector: 'tick'
-    }
-  }
+      input: 1000,
+      selector: 'tick',
+    },
+  },
 ])
 </script>
 

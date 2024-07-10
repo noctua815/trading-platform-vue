@@ -1,9 +1,9 @@
 <script setup>
-import {reactive, ref, nextTick}              from 'vue'
-import DragItem                               from '@ui/DragItem.vue'
-import {Line}                                 from 'vue-chartjs'
+import { reactive, ref, nextTick } from 'vue'
+import DragItem from '@ui/DragItem.vue'
+import { Line } from 'vue-chartjs'
 import 'chartjs-adapter-luxon'
-import {datasetConfig, chartOptions, getDate} from './chartConfig.js'
+import { datasetConfig, chartOptions, getDate } from './chartConfig.js'
 
 import {
   Chart as ChartJS,
@@ -13,10 +13,10 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 } from 'chart.js'
 
-import {DateTime} from 'luxon'
+import { DateTime } from 'luxon'
 
 const MIN = 20
 const MAX = 60
@@ -28,7 +28,7 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 )
 
 const loaded = ref(false)
@@ -38,98 +38,96 @@ const loadData = () => {
   const data = getRawArray()
   // const data = getArray(21, MIN, MAX)
 
-  chartData.datasets = [
-    {...datasetConfig, data}
-  ]
+  chartData.datasets = [{ ...datasetConfig, data }]
   loaded.value = true
 }
 
 const getRawArray = () => {
   return [
     {
-      'x': '2023-04-03T13:25:07.837+03:00',
-      'y': 37
+      x: '2023-04-03T13:25:07.837+03:00',
+      y: 37,
     },
     {
-      'x': '2023-04-02T13:25:07.837+03:00',
-      'y': 30
+      x: '2023-04-02T13:25:07.837+03:00',
+      y: 30,
     },
     {
-      'x': '2023-04-01T13:25:07.837+03:00',
-      'y': 46
+      x: '2023-04-01T13:25:07.837+03:00',
+      y: 46,
     },
     {
-      'x': '2023-03-31T13:25:07.837+03:00',
-      'y': 39
+      x: '2023-03-31T13:25:07.837+03:00',
+      y: 39,
     },
     {
-      'x': '2023-03-30T13:25:07.837+03:00',
-      'y': 28
+      x: '2023-03-30T13:25:07.837+03:00',
+      y: 28,
     },
     {
-      'x': '2023-03-29T13:25:07.837+03:00',
-      'y': 30
+      x: '2023-03-29T13:25:07.837+03:00',
+      y: 30,
     },
     {
-      'x': '2023-03-28T13:25:07.837+03:00',
-      'y': 58
+      x: '2023-03-28T13:25:07.837+03:00',
+      y: 58,
     },
     {
-      'x': '2023-03-27T13:25:07.837+03:00',
-      'y': 31
+      x: '2023-03-27T13:25:07.837+03:00',
+      y: 31,
     },
     {
-      'x': '2023-03-26T13:25:07.837+03:00',
-      'y': 59
+      x: '2023-03-26T13:25:07.837+03:00',
+      y: 59,
     },
     {
-      'x': '2023-03-25T13:25:07.837+02:00',
-      'y': 34
+      x: '2023-03-25T13:25:07.837+02:00',
+      y: 34,
     },
     {
-      'x': '2023-03-24T13:25:07.837+02:00',
-      'y': 43
+      x: '2023-03-24T13:25:07.837+02:00',
+      y: 43,
     },
     {
-      'x': '2023-03-23T13:25:07.837+02:00',
-      'y': 21
+      x: '2023-03-23T13:25:07.837+02:00',
+      y: 21,
     },
     {
-      'x': '2023-03-22T13:25:07.837+02:00',
-      'y': 31
+      x: '2023-03-22T13:25:07.837+02:00',
+      y: 31,
     },
     {
-      'x': '2023-03-21T13:25:07.837+02:00',
-      'y': 56
+      x: '2023-03-21T13:25:07.837+02:00',
+      y: 56,
     },
     {
-      'x': '2023-03-20T13:25:07.837+02:00',
-      'y': 55
+      x: '2023-03-20T13:25:07.837+02:00',
+      y: 55,
     },
     {
-      'x': '2023-03-19T13:25:07.837+02:00',
-      'y': 54
+      x: '2023-03-19T13:25:07.837+02:00',
+      y: 54,
     },
     {
-      'x': '2023-03-18T13:25:07.837+02:00',
-      'y': 48
+      x: '2023-03-18T13:25:07.837+02:00',
+      y: 48,
     },
     {
-      'x': '2023-03-17T13:25:07.837+02:00',
-      'y': 24
+      x: '2023-03-17T13:25:07.837+02:00',
+      y: 24,
     },
     {
-      'x': '2023-03-16T13:25:07.837+02:00',
-      'y': 28
+      x: '2023-03-16T13:25:07.837+02:00',
+      y: 28,
     },
     {
-      'x': '2023-03-15T13:25:07.837+02:00',
-      'y': 57
+      x: '2023-03-15T13:25:07.837+02:00',
+      y: 57,
     },
     {
-      'x': '2023-03-14T13:25:07.837+02:00',
-      'y': 29
-    }
+      x: '2023-03-14T13:25:07.837+02:00',
+      y: 29,
+    },
   ]
 }
 const getArray = (count = 20, min = 1, max = 100) => {
@@ -145,7 +143,7 @@ const getArray = (count = 20, min = 1, max = 100) => {
     day = getDate(day, 1)
     data.push({
       x: day,
-      y: rand
+      y: rand,
     })
   }
 

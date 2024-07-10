@@ -1,21 +1,21 @@
 <script setup>
-import {reactive, ref, computed} from 'vue'
+import { reactive, ref, computed } from 'vue'
 import RectIcon from '@/assets/icons/right-rect.svg'
 
 const routes = reactive([
   {
     name: 'BINANCE',
-    path: '/'
+    path: '/',
   },
   {
     name: 'SPOT',
-    path: '/'
+    path: '/',
   },
   {
     name: 'BTCUSDT',
     sub: 'MULTIBOX 2',
-    path: '/'
-  }
+    path: '/',
+  },
 ])
 </script>
 

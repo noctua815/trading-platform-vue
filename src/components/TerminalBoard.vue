@@ -1,17 +1,17 @@
 <script setup>
-import {reactive, ref,markRaw, defineAsyncComponent} from 'vue'
+import { reactive, ref, markRaw, defineAsyncComponent } from 'vue'
 import draggable from 'vuedraggable'
 
 import StatisticInfo from '@/components/terminal/StatisticInfo.vue'
 
 let list = reactive([
   // { comp: 'StatisticInfo', id: 0, order: 1, props: {}, fullWidth: true},
-  { comp: 'RealtimeInfo', id: 2, order: 2},
-  { comp: 'TradeOperations', id: 1, order: 3, props: {}},
-  { comp: 'EpochInfo', id: 3, order: 4},
-  { comp: 'LogInfo', id: 4, order: 5},
-  { comp: 'RealtimeFrameInfo', id: 22, order: 6},
-  { comp: 'PnlInfo', id: 0, order: 7, props: {}},
+  { comp: 'RealtimeInfo', id: 2, order: 2 },
+  { comp: 'TradeOperations', id: 1, order: 3, props: {} },
+  { comp: 'EpochInfo', id: 3, order: 4 },
+  { comp: 'LogInfo', id: 4, order: 5 },
+  { comp: 'RealtimeFrameInfo', id: 22, order: 6 },
+  { comp: 'PnlInfo', id: 0, order: 7, props: {} },
 ])
 const loadedComps = markRaw({})
 
@@ -19,14 +19,9 @@ const sortList = () => {
   list = list.sort((a, b) => a.order - b.order)
 }
 const loadComponent = (name) =>
-  defineAsyncComponent(
-    () =>
-      import(
-        `./terminal/${name}.vue`
-        ),
-  );
+  defineAsyncComponent(() => import(`./terminal/${name}.vue`))
 
-function loadComponents () {
+function loadComponents() {
   sortList()
   for (const item of list) {
     const newComp = loadComponent(item.comp)
@@ -35,7 +30,6 @@ function loadComponents () {
 }
 
 loadComponents()
-
 </script>
 
 <template lang="pug">
@@ -87,28 +81,27 @@ loadComponents()
 }
 
 .sortable-ghost {
-  border: 1px solid red!important;
+  border: 1px solid red !important;
 }
 
 .sortable-chosen {
-  opacity: 1!important;
-  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.25)!important;
+  opacity: 1 !important;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.25) !important;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .chosen {
-  opacity: 1!important;
-
+  opacity: 1 !important;
 }
 .ghost {
-  opacity: 1!important;
+  opacity: 1 !important;
   //cursor: grabbing;
   border-radius: 12px;
 }
 
 .sortable-drag {
-  opacity: 0.2!important;
+  opacity: 0.2 !important;
   cursor: grabbing;
   border-radius: 12px;
 }

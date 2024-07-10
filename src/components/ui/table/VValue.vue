@@ -1,18 +1,18 @@
 <script setup>
-import {computed} from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   value: [Number, String],
   color: {
     type: String,
     default: 'black',
-    validator: (value) => ['black', 'gray', 'green', 'red'].includes(value)
+    validator: (value) => ['black', 'gray', 'green', 'red'].includes(value),
   },
   styles: {
     type: String,
     default: 'normal',
-    validator: (value) => ['normal', 'bold', 'semibold'].includes(value)
-  }
+    validator: (value) => ['normal', 'bold', 'semibold'].includes(value),
+  },
 })
 const classes = computed(() => {
   let str = `is-${props.color} `

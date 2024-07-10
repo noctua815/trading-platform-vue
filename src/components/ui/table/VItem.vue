@@ -1,11 +1,10 @@
 <script setup>
-import {reactive, ref, computed} from 'vue'
-import VPercent                  from '@ui/table/VPercent.vue'
-import VValue                    from '@ui/table/VValue.vue'
-import VBtn                      from '@ui/VButton.vue'
+import VPercent from '@ui/table/VPercent.vue'
+import VValue from '@ui/table/VValue.vue'
+import VBtn from '@ui/VButton.vue'
 
 const props = defineProps({
-  data: Array
+  data: Array,
 })
 
 const vDynamicEvents = {
@@ -16,25 +15,10 @@ const vDynamicEvents = {
       allEvents.forEach((event) => {
         binding.instance.$on(event, (eventData) => {
           // binding
-          console.log('fired??')
         })
       })
     }
   },
-  // created(el, binding, vnode, prevVnode) {
-  //   console.log('created', el, binding, vnode, prevVnode)
-  //   const allEvents = binding.value
-  //   // if (allEvents) {
-  //   //   allEvents.forEach((event) => {
-  //   //     console.log('start for ', event)
-  //   //     // register handler in the dynamic component
-  //   //     vnode.componentInstance.$on(event, (eventData) => {
-  //   //       // when the event is fired, the proxyEvent function is going to be called
-  //   //       vnode.context.proxyEvent(event, eventData);
-  //   //     });
-  //   //   });
-  //   // }
-  // }
 }
 
 const getComponent = (type) => {

@@ -1,5 +1,5 @@
 <script setup>
-import {ref, computed} from 'vue'
+import { ref, computed } from 'vue'
 import OnlineIcon from '@/assets/icons/online.svg'
 import OfflineIcon from '@/assets/icons/offline.svg'
 import SlowConnectionIcon from '@/assets/icons/slow-connection.svg'
@@ -7,18 +7,21 @@ import SlowConnectionIcon from '@/assets/icons/slow-connection.svg'
 const status = ref('online') // online, offline, slow
 const statusInfo = computed(() => {
   switch (status.value) {
-    case 'online': return {
-      text: 'Online',
-      icon: OnlineIcon
-    }
-    case 'offline': return {
-      text: 'Offline',
-      icon: OfflineIcon
-    }
-    case 'slow': return {
-      text: 'Slow connection',
-      icon: SlowConnectionIcon
-    }
+    case 'online':
+      return {
+        text: 'Online',
+        icon: OnlineIcon,
+      }
+    case 'offline':
+      return {
+        text: 'Offline',
+        icon: OfflineIcon,
+      }
+    case 'slow':
+      return {
+        text: 'Slow connection',
+        icon: SlowConnectionIcon,
+      }
   }
 })
 </script>
