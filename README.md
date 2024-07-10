@@ -4,7 +4,7 @@ The concept is a trading platform built on Vue 3 + Vite + Typescript. It include
 
 ## Demo
 
-A live demo is available at [website](https://noctua815.github.io/trading-platform-vue/).
+A live demo is available on the [website](https://noctua815.github.io/trading-platform-vue/).
 ![platform-preview](./public/preview.gif)
 
 ## Used technologies
